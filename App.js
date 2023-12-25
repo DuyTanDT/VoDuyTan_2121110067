@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList, ScrollView }
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import { TextInput } from 'react-native';
+import Slideshow from './home/Slider';
+
+
 
 
 
@@ -49,7 +52,6 @@ export default function App() {
 
     <View style={styles.container}>
       
-      {/** slider */}
       <View style={styles.header}>
         {/* Your logo */}
         <Image source={require('./img/a1.jpg')} style={styles.logo} />
@@ -62,10 +64,10 @@ export default function App() {
             // Handle search functionality here
           }}
         />
+  
       </View>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-
-
+      <Slideshow />
         {products && (
           <FlatList
             data={products}
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:50,
   },
   scrollContainer: {
     alignItems: 'center',
