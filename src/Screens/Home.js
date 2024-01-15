@@ -8,6 +8,7 @@ import ProductsTile from "../Components/ProductsTile";
 import ProductsCarousel from "../Components/ProductsCarousel";
 import { fruits, vegetables } from "../Utils/Date";
 
+
 const Home = () => {
   return (
     <ScrollView style={{backgroundColor:"#777777"}}>
@@ -19,7 +20,7 @@ const Home = () => {
       <ProductsCarousel data={fruits}/>
       <ProductsTile title="Hoodie                "/>
       <ProductsCarousel data={vegetables}/>
-      
+    
     </SafeAreaView>
     </ScrollView>
   );

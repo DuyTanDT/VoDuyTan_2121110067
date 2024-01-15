@@ -6,7 +6,7 @@ export const fruits = [
     img: "https://down-vn.img.susercontent.com/file/sg-11134201-22100-smu7tj5vktiv49",
   },
   {
-    name: "Áo Bomber Varsity Jacket The Bad God B Flow",
+    name: "Áo Bomber Varsity Jacket The Bad ",
     pieces: "7",
     price: "450.000",
     img: "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpu8dibfqwjbb7",

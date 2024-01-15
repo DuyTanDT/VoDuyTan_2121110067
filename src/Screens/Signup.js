@@ -1,11 +1,12 @@
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { myColors } from "../Utils/MyColor";
 import { StatusBar } from "expo-status-bar";
 import { TextInput } from "react-native-web";
 import { Iconicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { myColors } from "../Utils/MyColor";
+import { NavigationContainer } from "@react-navigation/native";
 
 const Signup = () => {
   const [isVisbile, setisVisbile] = useState(true);
@@ -14,9 +15,10 @@ const Signup = () => {
     password: "",
   });
   const { email, password } = userCrendetials;
-  console.log(email);
+  const nav = useNavigation(); // Add this line to get navigation object
 
-  const nav = useNavigation();
+  // ... rest of the component code
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: myColors.secondary }}>
       <StatusBar />
@@ -29,7 +31,7 @@ const Signup = () => {
             paddingTop: 50,
             marginTop: 50,
           }}
-          source={require("../assets/logo.png")}
+          // source={require("../assets/logo.png")}
         />
 
         <view style={{ paddingHorizontal: 20, marginTop: 30 }}>
@@ -172,31 +174,34 @@ const Signup = () => {
             and Service and Privacy Policy
           </Text>
           <TouchableOpacity
-            onPress={() => {
-              console.log("Press");
-            }}
+          onPress={() => {
+            console.log("Press");
+            // Use navigation to navigate to another screen
+            nav.navigate("Login"); // Make sure "Login" matches the name in your navigator
+          }}
+          style={{
+            backgroundColor: myColors.primary,
+            marginTop: 30,
+            height: 60,
+            width: 300,
+            borderRadius: 20,
+            justifyContent: "center",
+            alignItems: "center",
+            marginLeft: 40,
+            gap: 5,
+          }}
+        >
+          <Text
             style={{
-              backgroundColor: myColors.primary,
-              marginTop: 30,
-              height: 60,
-              width: 300,
-              borderRadius: 20,
-              justifyContent: "center",
-              alignItems: "center",
-              marginLeft: 40,
-              gap: 5,
+              fontSize: 19,
+              color: myColors.secondary,
+              fontWeight: "500",
             }}
           >
-            <Text
-              style={{
-                fontSize: 19,
-                color: myColors.secondary,
-                fontWeight: "500",
-              }}
-            >
-              Sign Up
-            </Text>
-          </TouchableOpacity>
+            Sign Up
+          </Text>
+        </TouchableOpacity>
+
 
           <View
             style={{

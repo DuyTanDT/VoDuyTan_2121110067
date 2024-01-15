@@ -2,7 +2,7 @@ import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { fruits } from "../Utils/Date";
 import { responsiveHeight } from "react-native-responsive-dimensions";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../Redux/CartSlice";
@@ -11,6 +11,7 @@ const ProductsCarousel = ({ data }) => {
   const dispatch = useDispatch();
   const storeData = useSelector((state) => state.CartSlice);
   const nav = useNavigation();
+
   return (
     <View>
       <FlatList
@@ -41,10 +42,10 @@ const ProductsCarousel = ({ data }) => {
             />
 
             <View style={{ paddingHorizontal: 10 }}>
-              <Text style={{ fontSize: 18, fontWeight: "600" }}>
+              <Text style={{ fontSize: 14, fontWeight: "600" }}>
                 {item.name}
               </Text>
-              <Text style={{ color: "black" }}>Số lượng : {item.pieces}</Text>
+              <Text style={{ color: "black" }}>Đã bán: {item.pieces}</Text>
 
               <View
                 style={{
@@ -53,19 +54,35 @@ const ProductsCarousel = ({ data }) => {
                   justifyContent: "space-between",
                 }}
               >
-                <Text style={{ color: "#990000", fontWeight: "bold" }}>
-                  {item.price} Vnd
+                <Text style={{ color: "black", fontWeight: "bold" }}>Giá:
+                  <Text style={{ color: "#990000", fontWeight: "bold" }}> {item.price} Vnd</Text>
                 </Text>
-            <AntDesign
-  name="shoppingcart"  // Change the icon name to "shoppingcart"
-  size={22}
-  color="white"
-  onPress={() => {
-    dispatch(addToCart(item));
-  }}
-/>
+              
+                <View style={{ flexDirection: "row", alignItems: "center",position:"relative" }}>
+                  <AntDesign
+                    name="shoppingcart"
+                    size={22}
+                    color="white"
+                    style={{ marginRight: 10,position:"absolute",top:10,right:5 }}
+                    onPress={() => {
+                      dispatch(addToCart(item));
+                    }}
+                  />
+                 {/* Heart Icon */}
+                 <Ionicons
+                    name="heart-outline"
+                    size={22}
+                    color="red"
+                    style={{ marginRight: 10,position:"absolute",right:5 }}
+                    onPress={() => {
+                      // Handle heart icon press
+                    }}
+                  />
+                </View>
               </View>
+              
             </View>
+            
           </TouchableOpacity>
         )}
       />

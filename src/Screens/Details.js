@@ -20,7 +20,7 @@ const Details = ({ route }) => {
   const nav = useNavigation();
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "white", gap: 20 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#777777", gap: 20 }}>
       <StatusBar backgroundColor="white" />
       <View>
         <Image
@@ -36,7 +36,7 @@ const Details = ({ route }) => {
             uri: img,
           }}
         />
-        <View
+        <View 
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
@@ -64,7 +64,7 @@ const Details = ({ route }) => {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 25, color: "black", fontWeight: "600",textAlign:"center" }}>
+          <Text style={{ fontSize: 18, color: "black", fontWeight: "600",textAlign:"center" }}>
             {name}
           </Text>
           {/* <Fontisto
@@ -74,29 +74,20 @@ const Details = ({ route }) => {
             color="black"
           /> */}
         </View>
-        <Text style={{ fontSize: 16, color: "gray",marginBottom:4,marginTop:4 }}> Giá:  <Text style={{ fontSize: 20, color: "red", fontWeight: "bold" }}>
+        <Text style={{ fontSize: 16, color: "black",marginBottom:4,marginTop:4 }}> Giá:  <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>
           {price} VND
         </Text>
       
         </Text>
+        <Text>
+
+
+
+        </Text>
      
         {/* <DropBox /> */}
         
-        {/* <View style={{
-            flexDirection:"row",
-            justifyContent: "space-between",
-            
-            
-          }}>
-          <Text style={{ paddingVertical: 13,}}>
-          product reviews   
-          </Text>
-          <AntDesign name="star" size={18} color="yellow" />
-          <AntDesign name="star" size={18} color="yellow" />
-          <AntDesign name="star" size={18} color="yellow" />
-          <AntDesign name="star" size={18} color="yellow" />
-          <AntDesign name="star" size={18} color="yellow" /> 
-          </View> */}
+  
        <View style={{ flex: 0.85, marginTop: 110, flexDirection: 'row', justifyContent: 'space-between' }}>
   {/* Giỏ hàng button */}
   <TouchableOpacity
