@@ -11,8 +11,6 @@ const Router = () => {
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen component={TabRouter} name={'Home'} />
-           
-                {/* <Stack.Screen component={searchitem} name={'Search'} /> */}
             </Stack.Navigator>
     </NavigationContainer>
 

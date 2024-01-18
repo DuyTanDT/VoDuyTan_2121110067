@@ -1,5 +1,8 @@
 export const myColors = {
-    primary:'#53b175',
+    primary:'#FF6633',
     secondary:"white",
-    third:'black'
+    third:'black',
+    green:'greeb',
+    red:'red',
+    ye:'yellow'
 };

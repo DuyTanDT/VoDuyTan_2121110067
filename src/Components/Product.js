@@ -1,3 +1,4 @@
+
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { fruits } from "../Utils/Date";

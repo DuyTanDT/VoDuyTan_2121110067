@@ -90,12 +90,13 @@ const Cart = () => {
                   <Text
                     style={{ fontSize: 20, fontWeight: "600", color: "gray" }}
                   >
-                    I{item.name}
+                    {item.name}
                   </Text>
                   <AntDesign
-                    name="close"
+                    name="delete"
                     size={20}
-                    color="gray"
+                    color="red"
+                    style={{ top:100,right:20}}
                     onPress={() => {
                       dispatch(removeFromCart(item));
                     }}
@@ -116,7 +117,7 @@ const Cart = () => {
                       flexDirection: "row",
                       alignItems: "center",
                       gap: 18,
-                      marginTop: 25,
+                      marginTop: 10,
                     }}
                   >
                     <AntDesign
@@ -129,6 +130,7 @@ const Cart = () => {
                     />
                     <Text style={{ fontSize: 17 }}>{item.quantity}</Text>
                     <AntDesign
+                   
                       name="plus"
                       size={20}
                       color={myColors.primary}
@@ -143,10 +145,11 @@ const Cart = () => {
 
                   <Text
                     style={{
+                      
                       fontSize: 18,
                       fontWeight: 700,
                       color: "red",
-                      marginTop: 25,
+                      marginTop: 5,
                     }}
                   >
                     {item.price * item.quantity} .000VND

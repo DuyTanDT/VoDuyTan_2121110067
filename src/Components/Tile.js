@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { myColors } from "../Utils/MyColor";
+
 
 const ProductsTile = ({title}) => {
   return (
@@ -13,8 +13,8 @@ const ProductsTile = ({title}) => {
         alignItems: "center",
       }}
     >
-        <Text style={{ fontSize:20,color: "black", fontWeight:"700"}} >{title} </Text>
-        {/* <Text style={{ fontSize:16,color:myColors.primary,marginLeft: 140}}> Tất cả</Text> */}
+        <Text style={{left:140, fontSize:25,color: "black", fontWeight:"700"}} >{title} </Text>
+      
     </View>
   );
 };

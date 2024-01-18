@@ -4,6 +4,7 @@ import Home from '../Screens/Home';
 import Details from '../Screens/Details';
 import Cart from '../Screens/Cart';
 import Orderplaced from '../Screens/Orderplaced';
+import Signup from '../Screens/Signup';
 
 const Stack= createNativeStackNavigator();
 const HomeStack = () => {
@@ -13,6 +14,8 @@ const HomeStack = () => {
     <Stack.Screen name={'Details'}component={Details} options={{ headerShown: false }} />
     <Stack.Screen name="Cart" component={Cart} options={{ headerShown: false }} />
     <Stack.Screen name="Orderplaced" component={Orderplaced} options={{ headerShown: false }} />
+    <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} />
+
    </Stack.Navigator>
   )
 }

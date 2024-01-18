@@ -33,20 +33,11 @@ const TabRouter = () => {
           return (
             <Icon name="home" size={25} color={focused ? "red" : "gray"} />
           );
+          
         },
       }}
     />
-    <Tab.Screen
-      name={"Search"}
-      component={Cart}
-      options={{
-        tabBarIcon: ({ focused }) => {
-          return (
-            <Icon name="search" size={25} color={focused ? "red" : "gray"} />
-          );
-        },
-      }}
-    />
+  
      <Tab.Screen
       name={"Cart"}
       component={Cart}
@@ -65,6 +56,17 @@ const TabRouter = () => {
         tabBarIcon: ({ focused }) => {
           return (
             <FontAwesome name="user" size={25} color={focused ? "red" : "gray"} />
+          );
+        },
+      }}
+    />
+      <Tab.Screen
+      name={"Notifications"}
+      component={Signup}
+      options={{
+        tabBarIcon: ({ focused }) => {
+          return (
+            <Icon name="notifications" size={25} color={focused ? "red" : "gray"} />
           );
         },
       }}

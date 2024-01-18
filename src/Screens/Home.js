@@ -1,11 +1,11 @@
 import { View, Text, Image,ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import HomeIcon from "../Components/HomeIcon";
-import HomeSearch from "../Components/HomeSearch";
-import HomeBanner from "../Components/HomeBanner";
-import ProductsTile from "../Components/ProductsTile";
-import ProductsCarousel from "../Components/ProductsCarousel";
+import HomeIcon from "../Components/Icon";
+import HomeSearch from "../Components/Search";
+import HomeBanner from "../Components/Banner";
+import ProductsTile from "../Components/Tile";
+import ProductsCarousel from "../Components/Product";
 import { fruits, vegetables } from "../Utils/Date";
 
 
