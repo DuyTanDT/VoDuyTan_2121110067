@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, ScrollView, TouchableOpacity, Platform } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Platform } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { TextInput as WebTextInput } from "react-native-web";
@@ -22,27 +22,19 @@ const Signup = () => {
   const handleSignUp = () => {
     // Perform signup logic here
     console.log("Sign Up Pressed");
+
+    // After successful signup, navigate to the Login screen
+    navigation.navigate("Login");
   };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: myColors.secondary }}>
       <StatusBar />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ alignItems: "center", marginTop: 50 }}>
-          <Image
-            style={{ height: 80, width: 200 }}
-            source={require("../assets/logo1.png")}
-          />
-        </View>
-
         <View style={{ paddingHorizontal: 20, marginTop: 30 }}>
-          <Text style={{ color: myColors.third, fontSize: 35, fontWeight: "500", marginLeft: 40 }}>
-          Đăng ký{"\n"}
+          <Text style={{ color: myColors.third, fontSize: 35, fontWeight: "500", marginLeft: 40, textAlign: 'center' }}>
+            Đăng ký{"\n"}
           </Text>
-{/* 
-          <Text style={{ fontSize: 15, fontWeight: "400", color: "grey", marginTop: 10, marginBottom: 20, marginLeft: 40 }}>
-            Enter your credentials to continue{"\n"}
-          </Text> */}
 
           <Text style={{ fontSize: 15, fontWeight: "600", color: "grey", marginTop: 10, marginLeft: 40 }}>
             Tài khoản{"\n"}
@@ -77,10 +69,6 @@ const Signup = () => {
               style={{ borderColor: "#E3E3E3", borderBottomWidth: 1, marginTop: 15, fontSize: 16, marginLeft: 40, flex: 1 }}
             />
           </View>
-{/* 
-          <Text style={{ marginLeft: 40, marginRight: 40, fontSize: 15, fontWeight: "400", color: "black", marginTop: 15, letterSpacing: 0.7, lineHeight: 25, width: "95%", opacity: 0.7 }}>
-            By continuing, you agree to the Terms of Service {"\n"} and Service and Privacy Policy
-          </Text> */}
 
           <TouchableOpacity
             onPress={handleSignUp}

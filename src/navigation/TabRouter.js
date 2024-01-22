@@ -5,12 +5,13 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import HomeStack from './HomeStack';
 import Cart from '../Screens/Cart';
 import Signup from '../Screens/Signup';
+import Heart from '../Screens/Heart';
 
 const Tab=createBottomTabNavigator();
 const TabRouter = () => {
   return (
     <Tab.Navigator
-    // initialRouteName={'Home'}
+  
     screenOptions={{
       headerShown: false,
       tabBarActiveTintColor: "red",
@@ -62,7 +63,7 @@ const TabRouter = () => {
     />
       <Tab.Screen
       name={"Notifications"}
-      component={Signup}
+      component={Heart}
       options={{
         tabBarIcon: ({ focused }) => {
           return (

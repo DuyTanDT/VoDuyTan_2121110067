@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { View, Text, Image, FlatList, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { responsiveHeight } from "react-native-responsive-dimensions";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Feather } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../Redux/CartSlice";
 import { useNavigation } from "@react-navigation/native";
 import { myColors } from "../Utils/MyColor";
 import Orderplaced from "./Orderplaced";
-import { Feather } from "@expo/vector-icons";
+
 const Cart = () => {
   const nav = useNavigation();
   const dispatch = useDispatch();
   const storeData = useSelector((state) => state.CartSlice);
-  const [searchText, setSearchText] = useState(""); // Initialize as an empty string
+  const [searchText, setSearchText] = useState("");
   const [quantities, setQuantities] = useState({});
 
   const incrementQuantityHandler = (name) => {
@@ -58,20 +58,25 @@ const Cart = () => {
         <Text style={{ textAlign: "center", fontSize: 23, fontWeight: "600" }}>
           Giỏ hàng
         </Text>
+      </View>
+
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        {/* <Feather name="search" size={20} color="black" style={{ marginRight: 5, marginLeft: 5 }} /> */}
         <TextInput
           style={{
             height: 40,
             borderColor: "gray",
             borderWidth: 1,
-            flex: 0.5,
-            marginLeft: 10,
-            paddingLeft: 10,
+            flex: 0.8,
+            marginLeft: 5,
+            paddingLeft: 15,
             borderRadius: 10,
           }}
           placeholder="Tìm kiếm sản phẩm"
           onChangeText={(text) => setSearchText(text)}
           value={searchText}
         />
+        <Feather name="search" size={20} color="black" style={{ marginLeft: -25, zIndex: 1 }} />
       </View>
 
       <FlatList
@@ -101,7 +106,7 @@ const Cart = () => {
               defaultSource={require("../Utils/Date")}
             />
             <View style={{ flex: 1, marginLeft: 10, justifyContent: "space-between" }}>
-              <Text >{item.name}</Text>
+              <Text>{item.name}</Text>
               <Text style={{ color: 'red' }}>Giá: ${item.price}</Text>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity onPress={() => decrementQuantityHandler(item.name)}>
@@ -112,18 +117,17 @@ const Cart = () => {
                   <AntDesign name="plus" size={24} color={myColors.primary} />
                 </TouchableOpacity>
               </View>
-              <Text style={{ color: 'red',top:35 }}>Tổng: ${item.price * (quantities[item.name] || 1)}</Text>
+              <Text style={{ color: 'red', top: 35 }}>Tổng: ${item.price * (quantities[item.name] || 1)}</Text>
 
               <TouchableOpacity
                 onPress={() => handleRemoveItem(item.name)}
                 style={{
                   top: 20,
-                left:210,
+                  left: 210,
                   borderRadius: 10,
                   padding: 5,
                 }}
               >
-                {/* Replace the "Xóa" text with the trash bin icon */}
                 <Feather name="trash-2" size={20} color="red" />
               </TouchableOpacity>
             </View>

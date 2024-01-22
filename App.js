@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <Provider store={Store}>
-          <Router>
+  <Router>
   </Router>
     </Provider>
   );
